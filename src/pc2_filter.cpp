@@ -23,14 +23,14 @@ public:
     publisher = this->create_publisher<sensor_msgs::msg::PointCloud2>(output_topic_name, 10);
     RCLCPP_INFO(this->get_logger(), "Filtering node activated, publishing filtered point cloud under /filtered_pc2");
 
-    this->declare_parameter("voxel_grid_size", 0.02);
+    this->declare_parameter("voxel_grid_size", 0.01);
     voxel_grid_size = (float)this->get_parameter("voxel_grid_size").as_double();
 
     this->declare_parameter("segment_distance_max", 1.0);
-    segment_distance_max = (float)this->get_parameter("segment_distance_max").as_double();;
+    segment_distance_max = (float)this->get_parameter("segment_distance_max").as_double();
 
     this->declare_parameter("segment_distance_min", 0.0);
-    segment_distance_min = (float)this->get_parameter("segment_distance_min").as_double();;
+    segment_distance_min = (float)this->get_parameter("segment_distance_min").as_double();
 
   }
 
